@@ -3,6 +3,7 @@ import React from 'react';
 import { data } from '../../utils/data';
 import { useFetch } from '../../hooks/useFetch';
 import { apiUrl } from '../../utils/apiUrl';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 const ProjectsTable = () => {
   const app_projects = useFetch(`${apiUrl}`);
@@ -54,7 +55,11 @@ const ProjectsTable = () => {
             <p className="text-xs font-semiibold">{item.percentage}</p>
           </div>
 
-          <div className="col-span-1 p-2 font-medium text-sm"></div>
+          <div className="col-span-1 p-2 font-medium text-sm ml-auto">
+            <div className="flex bg-zinc-100 p-1 rounded-full hover:bg-zinc-200 cursor-pointer">
+              <ArrowRightIcon height={16} width={16} />
+            </div>
+          </div>
         </div>
       ))}
       <p className="text-zinc-900 text-lg font-semibold py-4">Your Projects</p>
@@ -92,7 +97,9 @@ const ProjectsTable = () => {
                 {item.percentage}
               </div>
 
-              <div className="col-span-1 p-2 font-medium text-sm"></div>
+              <div className="flex bg-zinc-100 p-1 rounded-full hover:bg-zinc-200 cursor-pointer">
+                <ArrowRightIcon height={16} width={16} />
+              </div>
             </div>
           ))}
         </>

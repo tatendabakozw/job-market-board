@@ -4,7 +4,7 @@ export const data = {
     {
       _id: '1101',
       name: 'level 4',
-      status: 'low',
+      status: 'pending',
       description: 'water',
       percentage: 16,
       progress: 'dam',
@@ -13,16 +13,16 @@ export const data = {
     {
       _id: '111884',
       name: 'Software dev',
-      status: 'low',
+      status: 'finished',
       description: 'water',
-      percentage: 80,
+      percentage: 100,
       progress: 'sump',
       createdAt: 1001010,
     },
     {
       _id: '1114',
       name: 'level 20',
-      status: 'low',
+      status: 'pending',
       description: 'water',
       percentage: 40,
       progress: 'sump',
