@@ -56,9 +56,12 @@ const ProjectsTable = () => {
           </div>
 
           <div className="col-span-1 p-2 font-medium text-sm ml-auto">
-            <div className="flex bg-zinc-100 p-1 rounded-full hover:bg-zinc-200 cursor-pointer">
+            <button
+              onClick={() => router.push(`project/${item._id}`)}
+              className="flex bg-zinc-100 p-1 rounded-full hover:bg-zinc-200 cursor-pointer"
+            >
               <ArrowRightIcon height={16} width={16} />
-            </div>
+            </button>
           </div>
         </div>
       ))}
@@ -97,8 +100,13 @@ const ProjectsTable = () => {
                 {item.percentage}
               </div>
 
-              <div className="flex bg-zinc-100 p-1 rounded-full hover:bg-zinc-200 cursor-pointer">
-                <ArrowRightIcon height={16} width={16} />
+              <div className="col-span-1 p-2 font-medium text-sm ml-auto">
+                <button
+                  onClick={() => router.push(`project/${item._id}`)}
+                  className="flex bg-zinc-100 p-1 rounded-full hover:bg-zinc-200 cursor-pointer"
+                >
+                  <ArrowRightIcon height={16} width={16} />
+                </button>
               </div>
             </div>
           ))}

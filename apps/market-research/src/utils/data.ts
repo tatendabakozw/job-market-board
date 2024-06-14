@@ -22,8 +22,17 @@ export const data = {
     {
       _id: '1114',
       name: 'level 20',
-      status: 'pending',
+      status: 'in-progress',
       description: 'water',
+      percentage: 40,
+      progress: 'sump',
+      createdAt: 1001010,
+    },
+    {
+      _id: '1114',
+      name: 'home work',
+      status: 'in-progress',
+      description: 'do my thesis homework',
       percentage: 40,
       progress: 'sump',
       createdAt: 1001010,

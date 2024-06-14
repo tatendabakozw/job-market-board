@@ -10,6 +10,9 @@ import { useRouter } from 'next/router';
 import ProjectTile from '../components/project-tile/ProjectTile';
 import Clock from '../components/clock/Clock';
 import Calendar from '../components/calender/Calender';
+import { PlusIcon } from '@heroicons/react/24/outline';
+import { data } from '../utils/data';
+import ProductItem from '../components/product-item/ProductItem';
 
 export function Index() {
   const router = useRouter();
@@ -110,7 +113,73 @@ export function Index() {
               <Clock />
             </div>
             {/* <NetworkTable /> */}
-            <ProjectsTable />
+            {/* <ProjectsTable /> */}
+            <div className="grid grid-cols-3 gap-4">
+              <div className="col-span-1 flex flex-col space-y-4">
+                {/* Add project button  */}
+                <div className="border border-zinc-200 rounded-lg p-2 flex flex-row items-center justify-between">
+                  <p>To do</p>
+                  <button className="bg-zinc-200 rounded-full p-1">
+                    <PlusIcon height={12} width={12} />
+                  </button>
+                </div>
+                {/* projects */}
+                {data.bodies_info
+                  .filter((item) => item.status === 'pending')
+                  .map((item) => (
+                    <ProductItem
+                      key={item._id}
+                      name={item.name}
+                      _id={item._id}
+                      description={item.description}
+                      createdAt={item.createdAt}
+                      percentage={item.percentage}
+                    />
+                  ))}
+              </div>
+              <div className="col-span-1 flex flex-col space-y-4">
+                {/* Add project button  */}
+                <div className="border border-zinc-200 rounded-lg p-2 flex flex-row items-center justify-between">
+                  <p>In progress</p>
+                  <button className="bg-zinc-200 rounded-full p-1">
+                    <PlusIcon height={12} width={12} />
+                  </button>
+                </div>
+                {data.bodies_info
+                  .filter((item) => item.status === 'in-progress')
+                  .map((item) => (
+                    <ProductItem
+                      key={item._id}
+                      name={item.name}
+                      _id={item._id}
+                      description={item.description}
+                      createdAt={item.createdAt}
+                      percentage={item.percentage}
+                    />
+                  ))}
+              </div>
+              <div className="col-span-1 flex flex-col space-y-3">
+                {/* Add project button  */}
+                <div className="border border-zinc-200 rounded-lg p-2 flex flex-row items-center justify-between">
+                  <p>Finished</p>
+                  <button className="bg-zinc-200 rounded-full p-1">
+                    <PlusIcon height={12} width={12} />
+                  </button>
+                </div>
+                {data.bodies_info
+                  .filter((item) => item.status === 'finished')
+                  .map((item) => (
+                    <ProductItem
+                      key={item._id}
+                      name={item.name}
+                      _id={item._id}
+                      description={item.description}
+                      createdAt={item.createdAt}
+                      percentage={item.percentage}
+                    />
+                  ))}
+              </div>
+            </div>
             {/* <TanksPageTable /> */}
           </div>
           <div className="col-span-1">
