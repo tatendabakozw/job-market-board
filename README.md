@@ -1,6 +1,6 @@
 # Interview
 
-![Local Image](./new-screen.png)
+![Local Image](./color-shot.png)
 
 ## Start the application
 
