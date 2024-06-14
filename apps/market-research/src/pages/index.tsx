@@ -15,6 +15,26 @@ import { data } from '../utils/data';
 import ProductItem from '../components/product-item/ProductItem';
 
 export function Index() {
+  const [droppedItemId, setDroppedItemId] = useState<string | null>(null);
+
+  const handleDragStart = (e: React.DragEvent<HTMLDivElement>, id: string) => {
+    // Perform any necessary actions when drag starts
+    console.log('Drag started for item:', id);
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const itemId = e.dataTransfer.getData('text/plain');
+    setDroppedItemId(itemId);
+    // Perform any necessary actions when drop occurs
+    console.log('Dropped item:', itemId);
+  };
+
+  const allowDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    // Optional: Implement visual indication when item can be dropped
+    // e.target.style.background = 'lightgray';
+  };
   const router = useRouter();
   const [selected_option, setSelectedOption] = useState({
     name: 'Active',
@@ -131,11 +151,13 @@ export function Index() {
                       key={item._id}
                       name={item.name}
                       _id={item._id}
+                      onDragStart={handleDragStart}
                       description={item.description}
                       createdAt={item.createdAt}
                       percentage={item.percentage}
                     />
                   ))}
+                {droppedItemId}
               </div>
               <div className="col-span-1 flex flex-col space-y-4">
                 {/* Add project button  */}
@@ -151,6 +173,7 @@ export function Index() {
                     <ProductItem
                       key={item._id}
                       name={item.name}
+                      onDragStart={handleDragStart}
                       _id={item._id}
                       description={item.description}
                       createdAt={item.createdAt}
@@ -171,6 +194,7 @@ export function Index() {
                   .map((item) => (
                     <ProductItem
                       key={item._id}
+                      onDragStart={handleDragStart}
                       name={item.name}
                       _id={item._id}
                       description={item.description}
