@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import { data } from '../../utils/data';
+import { ProjectItemProps } from '../../utils/types';
 
 const ProjectsTable = () => {
   const router = useRouter();
@@ -19,13 +20,13 @@ const ProjectsTable = () => {
       </div>
       {data.bodies_info.map((item) => (
         <div
-          key={item.project_id}
-          onClick={() => router.push(`/tanks/${item.project_id}`)}
+          key={item._id}
+          onClick={() => router.push(`/tanks/${item._id}`)}
           className="grid md:grid-cols-5 grid-cols-4 cursor-pointer bg-primary w-full main-text capitalize"
         >
           <div className="col-span-1 p-2 font-medium text-sm">{item.name}</div>
           <div className="col-span-1 p-2 font-medium text-sm">
-            {item.descripotion}
+            {item.description}
           </div>
           <div className="col-span-1 p-2 font-medium text-sm">
             {item.status}

@@ -6,23 +6,23 @@ export const data = {
   ],
   bodies_info: [
     {
-      project_id: '1101',
+      _id: '1101',
       name: 'level 4',
       status: 'low',
-      descripotion: 'water',
+      description: 'water',
       percentage: '16%',
       progress: 'dam',
-      createdAt: '07/21/14 14:40pm',
+      createdAt: 1001010,
     },
 
     {
-      project_id: '1114',
+      _id: '1114',
       name: 'level 20',
       status: 'low',
-      descripotion: 'water',
+      description: 'water',
       percentage: '16%',
       progress: 'sump',
-      createdAt: '07/21/14 14:40pm',
+      createdAt: 1001010,
     },
   ],
 };

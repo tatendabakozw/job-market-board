@@ -6,8 +6,10 @@ import {
 import { useState } from 'react';
 import GeneralLayout from '../layouts/GeneralLayout';
 import ProjectsTable from '../components/tables/ProjectsTable';
+import { useRouter } from 'next/router';
 
 export function Index() {
+  const router = useRouter();
   const [selected_option, setSelectedOption] = useState({
     name: 'Active',
     _id: 'active',
@@ -52,7 +54,10 @@ export function Index() {
             </p>
           </div>
           <div className="flex">
-            <button className="bg-zinc-950 hover:bg-zinc-800 text-white font-semibold p-2 rounded-lg">
+            <button
+              onClick={() => router.push('/project/add-project')}
+              className="bg-zinc-950 hover:bg-zinc-800 text-white font-semibold p-2 rounded-lg"
+            >
               Add Project
             </button>
           </div>
