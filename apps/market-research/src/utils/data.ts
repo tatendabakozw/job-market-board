@@ -1,9 +1,5 @@
 export const data = {
-  nav_options: [
-    { name: 'Overview', _id: 'overview', location: '/overview' },
-    { name: 'Bodies', _id: 'tanks', location: '/tanks' },
-    // { name: "Sensors", _id: "sensors", location: "/sensors" },
-  ],
+  nav_options: [{ name: 'Overview', _id: 'overview', location: '/' }],
   bodies_info: [
     {
       _id: '1101',

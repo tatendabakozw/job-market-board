@@ -40,7 +40,7 @@ function AddProject() {
   return (
     <GeneralLayout>
       <div className="bg-secondary">
-        <div className="max-w-7xl px-4 py-16 w-full mx-auto space-y-8 ">
+        <div className="max-w-7xl px-4 py-16 w-full mx-auto space-y-4">
           <div className="flex flex-row items-start justify-between">
             <div className="flex flex-col space-y-1">
               <p className="text-start font-bold heading-text text-3xl ">
