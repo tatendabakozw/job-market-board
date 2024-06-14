@@ -12,7 +12,7 @@ const Navbar = () => {
     <div className="w-full border-b border-zinc-200/50">
       <div className="container w-full max-w-7xl mx-auto px-4 flex flex-row items-center space-x-4 py-4 ">
         <Link href={'/'} className="heading-text font-bold">
-          Water Item
+          Project Management
         </Link>
         <div className="md:flex hidden flex-row items-center space-x-4 text-sm font-semibold">
           {data.nav_options.map((item, index) => (
