@@ -38,8 +38,20 @@ const ProjectsTable = () => {
             {item.status}
           </div>
 
-          <div className="md:flex hidden col-span-1 p-2 font-medium text-sm">
-            {item.percentage}
+          <div className="md:flex hidden col-span-1 p-2 font-medium text-sm items-center space-x-1">
+            <div className="w-full bg-gray-200 rounded-full h-2.5 ">
+              <div
+                className={`${
+                  item.percentage < 20
+                    ? 'bg-red-500 '
+                    : item.percentage > 70
+                    ? 'bg-green-600 '
+                    : 'bg-blue-700 '
+                } bg-blue-600 h-2.5 rounded-full`}
+                style={{ width: `${item.percentage}%` }}
+              ></div>
+            </div>
+            <p className="text-xs font-semiibold">{item.percentage}</p>
           </div>
 
           <div className="col-span-1 p-2 font-medium text-sm"></div>
@@ -65,6 +77,18 @@ const ProjectsTable = () => {
               </div>
 
               <div className="md:flex hidden col-span-1 p-2 font-medium text-sm">
+                <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                  <div
+                    className={`${
+                      item.percentage < 20
+                        ? 'bg-red-500 '
+                        : item.percentage > 70
+                        ? 'bg-green-600 '
+                        : 'bg-blue-700 '
+                    } bg-blue-600 h-2.5 rounded-full`}
+                    style={{ width: `45%` }}
+                  ></div>
+                </div>
                 {item.percentage}
               </div>
 
