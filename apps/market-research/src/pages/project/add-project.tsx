@@ -1,9 +1,10 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import { getMessage } from '../../helpers/getMessage';
 import GeneralLayout from '../../layouts/GeneralLayout';
 import PrimaryButton from '../../components/buttons/PrimaryButton';
 import CustomInput from '../../components/inputs/CustomInput';
+import { createUser } from '../../services/projectService';
+import { useRouter } from 'next/navigation';
 
 function AddProject() {
   const [name, setName] = useState('');
@@ -12,28 +13,28 @@ function AddProject() {
   const [assigned_researcher, setAssignedResearcher] = useState('');
   const [expiry_days, setExpiryDays] = useState('');
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const createNewProduct = async () => {
     try {
       setLoading(true);
-      // const { data } = await axios.post(`${apiUrl}/project/create`, {
-      //   name,
-      //   status,
-      //   quantity,
-      //   sku,
-      //   expiry_days,
-      //   description,
-      //   images: urls,
-      // });
+      const newUser = await createUser(
+        name,
+        description,
+        status,
+        assigned_researcher
+      );
+
+      console.log('New user from database', newUser);
 
       setName('');
       setDescription('');
       setStatus('');
       setExpiryDays('');
       setLoading(false);
+      router.push('/');
     } catch (error) {
       console.log(getMessage(error));
-
       setLoading(false);
     }
   };

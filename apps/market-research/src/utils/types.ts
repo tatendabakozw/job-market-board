@@ -1,6 +1,7 @@
 export interface ProjectItemProps {
   name: string;
   description: string;
+  assigned_researcher?: string;
   progress: number;
   status: 'pending' | 'finished' | 'in-progress' | 'failed';
   _id?: string;
