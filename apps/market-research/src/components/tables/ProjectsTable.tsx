@@ -6,8 +6,8 @@ import { ProjectItemProps } from '../../utils/types';
 const ProjectsTable = () => {
   const router = useRouter();
   return (
-    <div className="flex max-w-7xl w-full mx-auto flex-col">
-      <div className="grid md:grid-cols-5 grid-cols-4 bg-secondary w-full heading-text rounded capitalize">
+    <div className="flex max-w-7xl w-full mx-auto flex-col my-8">
+      <div className="grid md:grid-cols-5 grid-cols-4 bg-zinc-100 w-full heading-text rounded capitalize">
         <div className="col-span-1 p-2 font-medium text-sm">name</div>
         <div className=" col-span-1 p-2 font-medium text-sm">description</div>
         <div className="col-span-1 p-2 font-medium text-sm">status</div>
